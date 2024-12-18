@@ -27,15 +27,19 @@ jobs:
           node-version: '18'
 
       - name: Install dependencies
-        run: npm install
+        run: |
+          cd sparvoliValentinoApp
+          npm install
 
       - name: Build Vite project
-        run: npm run build
+        run: |
+          cd sparvoliValentinoApp
+          npm run build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist  # Carpeta generada por Vite después del build
+          path: sparvoliValentinoApp/dist  # Directorio donde Vite genera la build
 
   deploy:
     environment:
