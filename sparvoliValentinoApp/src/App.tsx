@@ -7,7 +7,7 @@ const App: React.FC = () => {
     <Router>
       <Header/>
       <Routes>
-        <Route path='/' element={<SparvoliValentino />}></Route>
+        <Route path='/ValentinoSparvoliWeb' element={<SparvoliValentino />}></Route>
       </Routes>
     </Router>
   );
