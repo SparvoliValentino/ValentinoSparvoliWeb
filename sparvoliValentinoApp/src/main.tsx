@@ -9,7 +9,7 @@ config.autoAddCss = false;
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <div className='bg-gray-900 w-full h-screen '>
+    <div className='bg-gray-900 w-full min-h-screen '>
       <div className='max-w-[1000px] mx-auto'>
         <App />
       </div>
