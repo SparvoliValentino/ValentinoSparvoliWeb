@@ -11,7 +11,9 @@ import auth0Logo from "../assets/auth0Logo.png"
 import CybergamesApp from "../assets/cybergamesApp.png"
 import AppleHeavenApp from "../assets/AppleHeaven.png"
 import { faFile } from "@fortawesome/free-solid-svg-icons";
-import { faFigma, faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faFigma, faGithub, faLinkedin  } from '@fortawesome/free-brands-svg-icons';
+import mongoDB from '../assets/mongoDB.png'
+import reactLogo from '../assets/react.svg'
 // import CardProject from "../Components/CardProject";
 import file from "../../public/CV.pdf"
 const SparvoliValentino = () => {
@@ -46,7 +48,6 @@ const SparvoliValentino = () => {
         },
     ];
 
-
     return (
         <div className=" w-full flex flex-col justify-center items-center">
             {/* Informacion basica e imagen */}
@@ -65,9 +66,9 @@ const SparvoliValentino = () => {
                 </div>
             </div>
             {/* Proyectos */}
-            <div className="flex flex-col justify-evenly items-center gap-5">
+            <div className="flex flex-col justify-evenly items-center gap-6">
                 <h2 className='text-white text-[50px] font-bold'>My projects</h2>
-                <div className="w-full min-h-[200px] rounded-lg flex border-2 border-blue-500">
+                <div className="w-full min-h-[200px] rounded-lg flex border-2 border-blue-500 shadow-md shadow-blue-300">
                     <div className="w-2/3  min-h-[200px] p-3 flex flex-col justify-evenly">
                         <h2 className="font-bold text-violet-500 text-[30px]">CyberGamer</h2>
                         <p className="font-regular text-white text-[15px]">Cybergames is an app developed for Henry's final project in Fullstack Web Developer. The app consists of a video game e-commerce where the user can buy products and subscribe to a service using real money. See the
@@ -96,7 +97,7 @@ const SparvoliValentino = () => {
 
                 </div>
 
-                <div className="w-full min-h-[200px] rounded-lg flex border-2 border-blue-500">
+                <div className="w-full min-h-[200px] rounded-lg flex border-2 border-blue-500 shadow-md shadow-blue-300">
                     <div className="w-2/3  min-h-[200px] p-3 flex flex-col justify-evenly">
                         <h2 className="font-bold text-violet-500 text-[30px]">Apple Heaven</h2>
                         <p className="font-regular text-white text-[15px]">Apple Heaven is an e-commerce project developed for the fourth module of Henry. It showcases a fictional commerce test where we can buy Apple products by creating an account, placing orders, and interacting with the entire site. See the
@@ -128,7 +129,7 @@ const SparvoliValentino = () => {
                     {studies.map((study, index) => (
                         <div
                             key={index}
-                            className={`flex items-center mb-8 relative ${index % 2 === 0 ? 'flex-row-reverse' : ''
+                            className={`flex items-center gap-2 mb-8 relative ${index % 2 === 0 ? 'flex-row-reverse' : ''
                                 }`}
                         >
                             {/* Year Circle */}
@@ -150,6 +151,44 @@ const SparvoliValentino = () => {
                         <div className="bg-blue-500 text-white w-12 h-12 rounded-full flex items-center justify-center text-lg font-bold shadow-lg">
                             NOW
                         </div>
+                    </div>
+                </div>
+            </div>
+
+            <div className="w-full flex flex-col justify-center items-center">
+                <h2 className='text-white text-[50px] font-bold'>Technologies</h2>
+                <div className="w-full p-4 flex justify-center flex-wrap gap-3">
+                    <div className="w-[200px] h-[170px] bg-gray-500 hover:bg-blue-600 flex-col rounded-xl shadow-md transform transition duration-300 ease-in-out hover:scale-105 flex items-center justify-center">
+                        <img src={nextJsLogo} alt="" className="w-[100px] h-[100px]" />
+                        <h2 className="text-white font-semibold text-[25px]">Next.JS</h2>
+                    </div>
+                    <div className="w-[200px] h-[170px] bg-gray-500 hover:bg-blue-600 flex-col rounded-xl shadow-lg transform transition duration-300 ease-in-out hover:scale-105 flex items-center justify-center">
+                        <img src={nestJsLogo} alt="" className="w-[100px] h-[100px]" />
+                        <h2 className="text-white font-semibold text-[25px]">Nest.JS</h2>
+                    </div>
+                    <div className="w-[200px] h-[170px] bg-gray-500 hover:bg-blue-600 flex-col rounded-xl shadow-lg transform transition duration-300 ease-in-out hover:scale-105 flex items-center justify-center">
+                        <FontAwesomeIcon icon={faFigma} className="text-[100px]" />
+                        <h2 className="text-white font-semibold text-[25px]">Figma</h2>
+                    </div>
+                    <div className="w-[200px] h-[170px] bg-gray-500 hover:bg-blue-600 flex-col rounded-xl shadow-lg transform transition duration-300 ease-in-out hover:scale-105 flex items-center justify-center">
+                        <img src={cloudinaryLogo} alt="" className="w-[100px] h-[100px]" />
+                        <h2 className="text-white font-semibold text-[25px]">Cloudinary</h2>
+                    </div>
+                    <div className="w-[200px] h-[170px] bg-gray-500 hover:bg-blue-600 flex-col rounded-xl shadow-lg transform transition duration-300 ease-in-out hover:scale-105 flex items-center justify-center">
+                        <img src={mongoDB} alt="" className="w-[100px] h-[100px]" />
+                        <h2 className="text-white font-semibold text-[25px]">Mongo DB</h2>
+                    </div>
+                    <div className="w-[200px] h-[170px] bg-gray-500 hover:bg-blue-600 flex-col rounded-xl shadow-lg transform transition duration-300 ease-in-out hover:scale-105 flex items-center justify-center">
+                        <img src={mpLogo} alt="" className="w-[100px] h-[100px]" />
+                        <h2 className="text-white font-semibold text-[25px]">Mercado Pago</h2>
+                    </div>
+                    <div className="w-[200px] h-[170px] bg-gray-500 hover:bg-blue-600 flex-col rounded-xl shadow-lg transform transition duration-300 ease-in-out hover:scale-105 flex items-center justify-center">
+                        <img src={auth0Logo} alt="" className="w-[100px] h-[100px]" />
+                        <h2 className="text-white font-semibold text-[25px]">Auth0</h2>
+                    </div>
+                    <div className="w-[200px] h-[170px] bg-gray-500 hover:bg-blue-600 flex-col rounded-xl shadow-lg transform transition duration-300 ease-in-out hover:scale-105 flex items-center justify-center">
+                        <img src={reactLogo} alt="" className="w-[100px] h-[100px]" />
+                        <h2 className="text-white font-semibold text-[25px]">Auth0</h2>
                     </div>
                 </div>
             </div>
