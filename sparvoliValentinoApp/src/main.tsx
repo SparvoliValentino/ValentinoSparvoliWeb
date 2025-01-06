@@ -4,6 +4,7 @@ import './index.css'
 import App from './App.tsx'
 import { config } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
+import Footer from './Components/Footer.tsx';
 config.autoAddCss = false;
 
 
@@ -13,6 +14,7 @@ createRoot(document.getElementById('root')!).render(
       <div className='max-w-[1000px] mx-auto'>
         <App />
       </div>
+      <Footer/>
     </div>
   </StrictMode>,
 )
