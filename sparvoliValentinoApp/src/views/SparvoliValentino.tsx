@@ -67,95 +67,95 @@ const SparvoliValentino = () => {
             {/* Informacion basica e imagen */}
             <div className="w-full flex justify-start items-center h-[350px]">
                 <div className="w-1/2 flex justify-center items-center">
-                    <img src={FotoPerfil} alt="ProfilePicture" className="w-[200px] h-[200px] rounded-full" />
+                    <img src={FotoPerfil} alt="ProfilePicture" className="w-[150px] md:w-[200px] h-[150px] md:h-[200px] rounded-full" />
                 </div>
-                <div className="w-1/2 flex flex-col justify-start items-center">
-                    <h2 className="text-white font-bold text-[30px] w-full">Hi! Im Sparvoli Valentino</h2>
-                    <p className="text-white mt-4">I am a <strong>Full Stack Developer in training</strong>, specializing in <strong>Front-End</strong> development. Passionate about technology, web design, and creating interfaces that connect people with innovative solutions.</p>
-                    <ul className="w-full flex justify-evenly items-center mt-4">
-                        <a href="https://github.com/SparvoliValentino"><FontAwesomeIcon icon={faGithub} className="text-white text-[30px]" /></a>
-                        <a href="https://www.linkedin.com/in/valentino-sparvoli-088846219/"><FontAwesomeIcon icon={faLinkedin} className="text-white text-[30px]" /></a>
-                        <div className="flex justify-end items-end gap-1 cursor-pointer">
-                            <FontAwesomeIcon icon={faFile} className="text-white text-[30px]" onClick={handleFileDownload} />
-                            <p className="text-white font-bold">CV</p>
+                <div className="w-1/2 flex flex-col justify-start items-center mr-5">
+                    <h2 className="text-white font-bold text-[15px] md:text-[30px] w-full">Hi! Im Sparvoli Valentino</h2>
+                    <p className="text-white mt-4 text-[10px] md:text-[20px]">I am a <strong>Full Stack Developer in training</strong>, specializing in <strong>Front-End</strong> development. Passionate about technology, web design, and creating interfaces that connect people with innovative solutions.</p>
+                    <ul className="w-full flex justify-evenly items-center mt-7 ">
+                        <a href="https://github.com/SparvoliValentino"><FontAwesomeIcon icon={faGithub} className="text-gray-400 text-[30px] hover:text-[40px] hover:text-white" /></a>
+                        <a href="https://www.linkedin.com/in/valentino-sparvoli-088846219/"><FontAwesomeIcon icon={faLinkedin} className="text-gray-400 hover:text-white text-[30px] hover:text-[40px]" /></a>
+                        <div className="flex justify-end items-end gap-1 cursor-pointer ">
+                            <FontAwesomeIcon icon={faFile} className="text-gray-400 hover:text-white hover:text-[40px] text-[30px]" onClick={handleFileDownload} />
+                            <p className="text-gray-400 font-bold">CV</p>
                         </div>
                     </ul>
                 </div>
             </div>
+
             {/* Proyectos */}
             <div className="flex flex-col justify-evenly items-center gap-10">
-                {/* <h2 className='text-white text-[50px] font-bold'>My projects</h2> */}
-                <div className="w-full flex items-center my-8">
-                    <div className="flex-grow border-2 border-white rounded-l-full"></div>
-                    <span className="px-4 text-white text-[50px] font-bold">Projects</span>
-                    <div className="flex-grow border-2 border-white rounded-r-full"></div>
+                <div className="w-4/5 md:w-full flex items-center my-4 md:my-8">
+                    <div className="flex-grow border-[1px] md:border-2 border-white rounded-l-full"></div>
+                    <span className="px-4 text-white text-[35px] md:text-[50px] font-bold">Projects</span>
+                    <div className="flex-grow border-[1px] md:border-2 border-white rounded-r-full"></div>
                 </div>
-                <div className="w-full min-h-[200px] rounded-lg flex border-2 border-blue-500 shadow-md shadow-blue-300">
-                    <div className="w-2/3  min-h-[200px] p-3 flex flex-col justify-evenly relative">
-                        <div className="absolute -top-6  bg-gray-900 px-2 z-10">
-                            <h2 className="font-bold text-violet-500 text-[30px] tracking-widest">CyberGamer</h2>
-                        </div>
-                        {/* <h2 className="font-bold text-violet-500 text-[30px] absolute -top-6  bg-gray-900 px-2 z-10">CyberGamer</h2> */}
-                        <p className="font-regular text-white text-[15px] text-justify">Cybergames is an app developed for Henry's final project in Fullstack Web Developer. The app consists of a video game e-commerce where the user can buy products and subscribe to a service using real money. See the
-                            <a href="https://github.com/Alejandro-MCejas/PF-Ecommerce" className="text-blue-500"> repository</a>
-                        </p>
-                        <div className="flex gap-2 mt-2">
-                            <p className="font-thin text-white text-[15px]">Development time:</p>
-                            <p className="font-thin text-white text-[15px]">4 weeks</p>
-                        </div>
-                        <div className="flex gap-4">
-                            <p className="font-thin text-white">Tecnologies used:</p>
-                            <div className="flex gap-4 p-2">
-                                <img src={nextJsLogo} alt="Next.js" className="w-[40px] h-[40px] " />
-                                <img src={nestJsLogo} alt="Nest.js" className="w-[60px] h-[40px]" />
-                                <img src={mpLogo} alt="Mercado pago checkout pro" className="w-[40px] h-[40px]" />
-                                <img src={cloudinaryLogo} alt="Cloudinary" className="w-[60px] h-[40px]" />
-                                <FontAwesomeIcon icon={faFigma} className="text-[40px]" />
-                                <img src={swaggerLogo} alt="Swagger" className="w-[40px] h-[40px]" />
-                                <img src={auth0Logo} alt="Auth0" className="w-[40px] h-[40px]" />
+                <div className="p-2 md:p-0">
+                    <div className="w-full min-h-[200px] rounded-lg flex flex-col md:flex-row border-[1px] md:border-2 border-blue-500 md:shadow-md md:shadow-blue-300">
+                        <div className="w-full md:w-2/3 min-h-[200px] p-3 flex flex-col justify-evenly relative">
+                            <div className="absolute -top-5 md:-top-6  bg-gray-900 px-2 z-10">
+                                <h2 className="font-bold text-violet-500 text-[25px] md:text-[30px] tracking-widest">CyberGamer</h2>
+                            </div>
+                            <p className="font-regular text-white text-[15px] text-justify mt-2">Cybergames is an app developed for Henry's final project in Fullstack Web Developer. The app consists of a video game e-commerce where the user can buy products and subscribe to a service using real money. See the
+                                <a href="https://github.com/Alejandro-MCejas/PF-Ecommerce" className="text-blue-500"> repository</a>
+                            </p>
+                            <div className="flex gap-2 mt-2">
+                                <p className="font-thin text-white text-[15px]">Development time:</p>
+                                <p className="font-thin text-white text-[15px]">4 weeks</p>
+                            </div>
+                            <div className="flex flex-col md:flex-row gap-4">
+                                <p className="font-thin text-white">Tecnologies used:</p>
+                                <div className="max-w-full flex-wrap flex gap-4 p-2">
+                                    <img src={nextJsLogo} alt="Next.js" className="w-[40px] h-[40px] " />
+                                    <img src={nestJsLogo} alt="Nest.js" className="w-[60px] h-[40px]" />
+                                    <img src={mpLogo} alt="Mercado pago checkout pro" className="w-[40px] h-[40px]" />
+                                    <img src={cloudinaryLogo} alt="Cloudinary" className="w-[60px] h-[40px]" />
+                                    <FontAwesomeIcon icon={faFigma} className="text-[40px]" />
+                                    <img src={swaggerLogo} alt="Swagger" className="w-[40px] h-[40px]" />
+                                    <img src={auth0Logo} alt="Auth0" className="w-[40px] h-[40px]" />
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div className="w-1/3 min-h-[200px] p-2 ">
-                        <a href="https://pf-ecommerce2024.vercel.app/"><img src={CybergamesApp} alt="" className="w-full h-full rounded-md" /></a>
-                    </div>
+                        <div className="w-3/4 mx-auto md:w-1/3 min-h-[200px] p-4 md:p-2">
+                            <a href="https://pf-ecommerce2024.vercel.app/"><img src={CybergamesApp} alt="" className="w-full h-full rounded-md" /></a>
+                        </div>
 
+                    </div>
                 </div>
-
-                <div className="w-full min-h-[200px] rounded-lg flex border-2 border-blue-500 shadow-md shadow-blue-300">
-                    <div className="w-2/3  min-h-[200px] p-3 flex flex-col justify-evenly relative">
-                        <div className="absolute -top-6  bg-gray-900 px-2 z-10">
-                            <h2 className="font-bold text-violet-500 text-[30px] tracking-widest">Apple Heaven</h2>
-                        </div>
-
-
-                        <p className="font-regular text-white text-[15px] text-justify">Apple Heaven is an e-commerce project developed for the fourth module of Henry. It showcases a fictional commerce test where we can buy Apple products by creating an account, placing orders, and interacting with the entire site. See the
-                            <a href="https://github.com/SparvoliValentino/ecommerce-appleHeaven" className="text-blue-500"> repository</a>
-                        </p>
-                        <div className="flex gap-2 mt-2">
-                            <p className="font-thin text-white text-[15px]">Development time:</p>
-                            <p className="font-thin text-white text-[15px]">4 weeks</p>
-                        </div>
-                        <div className="flex gap-4">
-                            <p className="font-thin text-white">Tecnologies used:</p>
-                            <div className="flex gap-4 p-2">
-                                <img src={nextJsLogo} alt="Next.js" className="w-[40px] h-[40px] " />
-                                <FontAwesomeIcon icon={faFigma} className="text-[40px]" />
+                <div className="p-2 md:p-0">
+                    <div className="w-full min-h-[200px] rounded-lg flex flex-col md:flex-row border-[1px] md:border-2 border-blue-500 md:shadow-md md:shadow-blue-300">
+                        <div className="w-full md:w-2/3  min-h-[200px] p-3 flex flex-col justify-evenly relative">
+                            <div className="absolute -top-6 bg-gray-900 px-2 z-10">
+                                <h2 className="font-bold text-violet-500 text-[25px] md:text-[30px] tracking-widest">Apple Heaven</h2>
+                            </div>
+                            <p className="font-regular text-white text-[15px] text-justify mt-2">Apple Heaven is an e-commerce project developed for the fourth module of Henry. It showcases a fictional commerce test where we can buy Apple products by creating an account, placing orders, and interacting with the entire site. See the
+                                <a href="https://github.com/SparvoliValentino/ecommerce-appleHeaven" className="text-blue-500"> repository</a>
+                            </p>
+                            <div className="flex gap-2 mt-2">
+                                <p className="font-thin text-white text-[15px]">Development time:</p>
+                                <p className="font-thin text-white text-[15px]">4 weeks</p>
+                            </div>
+                            <div className="flex gap-4 flex-col  md:flex-row">
+                                <p className="font-thin text-white">Tecnologies used:</p>
+                                <div className="flex gap-4 p-2 flex-wrap">
+                                    <img src={nextJsLogo} alt="Next.js" className="w-[40px] h-[40px] " />
+                                    <FontAwesomeIcon icon={faFigma} className="text-[40px]" />
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div className="w-1/3 min-h-[200px] p-2 ">
-                        <a href="https://ecommerce-apple-heaven-26yb.vercel.app/"><img src={AppleHeavenApp} alt="" className="w-full h-full rounded-md" /></a>
+                        <div className="w-3/4 mx-auto md:w-1/3 min-h-[200px] p-2 ">
+                            <a href="https://ecommerce-apple-heaven-26yb.vercel.app/"><img src={AppleHeavenApp} alt="" className="w-full h-full rounded-md" /></a>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <div className="flex flex-col justify-center items-center gap-4 min-h-[820px]">
                 {/* <h2 className='text-white text-[50px] font-bold'>My studies</h2> */}
-                <div className="w-full flex items-center my-8">
-                    <div className="flex-grow border-2 border-white rounded-l-full"></div>
-                    <span className="px-4 text-white text-[50px] font-bold">Studies</span>
-                    <div className="flex-grow border-2 border-whitero unded-r-full"></div>
+                <div className="w-4/5 md:w-full flex items-center my-8">
+                    <div className="flex-grow border-[1px] md:border-2 border-white rounded-l-full"></div>
+                    <span className="px-4 text-white text-[35px] md:text-[50px] font-bold">Studies</span>
+                    <div className="flex-grow border-[1px] md:border-2 border-white rounded-r-full"></div>
                 </div>
                 <div className="flex flex-col items-center py-8 relative max-h-[550px] ">
                     {/* Center line behind the cards */}

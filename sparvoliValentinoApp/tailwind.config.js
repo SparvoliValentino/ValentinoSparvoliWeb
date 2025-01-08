@@ -5,7 +5,11 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx}", // Asegúrate de incluir las extensiones y rutas correctas
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        personalizada: ['"Nombre de la Fuente"', 'sans-serif'],
+      },
+    },
   },
   plugins: [],
 };
