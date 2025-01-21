@@ -84,7 +84,7 @@ const SparvoliValentino = () => {
             </div>
 
             {/* Proyectos */}
-            <div className="flex flex-col justify-evenly items-center gap-10">
+            <div className="flex flex-col justify-evenly items-center gap-10" id="projects">
                 <div className="w-4/5 md:w-full flex items-center my-4 md:my-8">
                     <div className="flex-grow border-[1px] md:border-2 border-white rounded-l-full"></div>
                     <span className="px-4 text-white text-[35px] md:text-[50px] font-bold">Projects</span>
@@ -150,7 +150,7 @@ const SparvoliValentino = () => {
                 </div>
             </div>
 
-            <div className="flex flex-col justify-center items-center gap-4 min-h-[820px]">
+            <div className="flex flex-col justify-center items-center gap-4 min-h-[820px]" id="studies">
                 {/* <h2 className='text-white text-[50px] font-bold'>My studies</h2> */}
                 <div className="w-4/5 md:w-full flex items-center my-8">
                     <div className="flex-grow border-[1px] md:border-2 border-white rounded-l-full"></div>
@@ -191,63 +191,63 @@ const SparvoliValentino = () => {
                 </div>
             </div>
 
-            <div className="w-full flex flex-col justify-center items-center">
+            <div className="w-full flex flex-col justify-center items-center mt-64 md:mt-0">
                 {/* <h2 className='text-white text-[50px] font-bold'>Technologies</h2> */}
-                <div className="w-full flex items-center my-8">
-                    <div className="flex-grow border-2 border-white rounded-l-full"></div>
-                    <span className="px-4 text-white text-[50px] font-bold">Technologies</span>
-                    <div className="flex-grow border-2 border-white rounded-r-full"></div>
+                <div className="w-4/5 md:w-full flex items-center my-8">
+                    <div className="flex-grow border-[1px] md:border-2 border-white rounded-l-full"></div>
+                    <span className="px-4 text-white text-[35px] md:text-[50px] font-bold">Technologies</span>
+                    <div className="flex-grow border-[1px] md:border-2 border-white rounded-r-full"></div>
                 </div>
                 <div className="w-full p-4 flex justify-center flex-wrap gap-3">
-                    <div className="w-[200px] h-[170px] bg-gray-500 hover:bg-blue-600 flex-col rounded-xl shadow-md transform transition duration-300 ease-in-out hover:scale-105 flex items-center justify-center">
-                        <img src={nextJsLogo} alt="" className="w-[100px] h-[100px]" />
-                        <h2 className="text-white font-semibold text-[25px]">Next.JS</h2>
+                    <div className="w-[100px] md:w-[200px] h-[100px] md:h-[170px] bg-gray-500 hover:bg-blue-600 flex-col rounded-xl shadow-md transform transition duration-300 ease-in-out hover:scale-105 flex items-center justify-center">
+                        <img src={nextJsLogo} alt="" className="w-[70px] md:w-[100px] h-[70px] md:h-[100px]" />
+                        <h2 className="text-white font-semibold text-[10px] md:text-[25px]">Next.JS</h2>
                     </div>
-                    <div className="w-[200px] h-[170px] bg-gray-500 hover:bg-blue-600 flex-col rounded-xl shadow-lg transform transition duration-300 ease-in-out hover:scale-105 flex items-center justify-center">
-                        <img src={nestJsLogo} alt="" className="w-[100px] h-[100px]" />
-                        <h2 className="text-white font-semibold text-[25px]">Nest.JS</h2>
+                    <div className="w-[100px] md:w-[200px] h-[100px] md:h-[170px] bg-gray-500 hover:bg-blue-600 flex-col rounded-xl shadow-lg transform transition duration-300 ease-in-out hover:scale-105 flex items-center justify-center">
+                        <img src={nestJsLogo} alt="" className="w-[70px] md:w-[100px] h-[70px] md:h-[100px]" />
+                        <h2 className="text-white font-semibold text-[10px] md:text-[25px]">Nest.JS</h2>
                     </div>
-                    <div className="w-[200px] h-[170px] bg-gray-500 hover:bg-blue-600 flex-col rounded-xl shadow-lg transform transition duration-300 ease-in-out hover:scale-105 flex items-center justify-center">
-                        <FontAwesomeIcon icon={faFigma} className="text-[100px]" />
-                        <h2 className="text-white font-semibold text-[25px]">Figma</h2>
+                    <div className="w-[100px] md:w-[200px] h-[100px] md:h-[170px] bg-gray-500 hover:bg-blue-600 flex-col rounded-xl shadow-lg transform transition duration-300 ease-in-out hover:scale-105 flex items-center justify-center">
+                        <FontAwesomeIcon icon={faFigma} className="text-[70px] md:text-[100px]" />
+                        <h2 className="text-white font-semibold text-[10px] md:text-[25px]">Figma</h2>
                     </div>
-                    <div className="w-[200px] h-[170px] bg-gray-500 hover:bg-blue-600 flex-col rounded-xl shadow-lg transform transition duration-300 ease-in-out hover:scale-105 flex items-center justify-center">
-                        <img src={cloudinaryLogo} alt="" className="w-[100px] h-[100px]" />
-                        <h2 className="text-white font-semibold text-[25px]">Cloudinary</h2>
+                    <div className="w-[100px] md:w-[200px] h-[100px] md:h-[170px] bg-gray-500 hover:bg-blue-600 flex-col rounded-xl shadow-lg transform transition duration-300 ease-in-out hover:scale-105 flex items-center justify-center">
+                        <img src={cloudinaryLogo} alt="" className="w-[70px] md:w-[100px] h-[70px] md:h-[100px]" />
+                        <h2 className="text-white font-semibold text-[10px] md:text-[25px]">Cloudinary</h2>
                     </div>
-                    <div className="w-[200px] h-[170px] bg-gray-500 hover:bg-blue-600 flex-col rounded-xl shadow-lg transform transition duration-300 ease-in-out hover:scale-105 flex items-center justify-center">
-                        <img src={mongoDB} alt="" className="w-[100px] h-[100px]" />
-                        <h2 className="text-white font-semibold text-[25px]">Mongo DB</h2>
+                    <div className="w-[100px] md:w-[200px] h-[100px] md:h-[170px] bg-gray-500 hover:bg-blue-600 flex-col rounded-xl shadow-lg transform transition duration-300 ease-in-out hover:scale-105 flex items-center justify-center">
+                        <img src={mongoDB} alt="" className="w-[70px] md:w-[100px] h-[70px] md:h-[100px]" />
+                        <h2 className="text-white font-semibold text-[10px] md:text-[25px]">Mongo DB</h2>
                     </div>
-                    <div className="w-[200px] h-[170px] bg-gray-500 hover:bg-blue-600 flex-col rounded-xl shadow-lg transform transition duration-300 ease-in-out hover:scale-105 flex items-center justify-center">
-                        <img src={mpLogo} alt="" className="w-[100px] h-[100px]" />
-                        <h2 className="text-white font-semibold text-[25px]">Mercado Pago</h2>
+                    <div className="w-[100px] md:w-[200px] h-[100px] md:h-[170px] bg-gray-500 hover:bg-blue-600 flex-col rounded-xl shadow-lg transform transition duration-300 ease-in-out hover:scale-105 flex items-center justify-center">
+                        <img src={mpLogo} alt="" className="w-[70px] md:w-[100px] h-[70px] md:h-[100px]" />
+                        <h2 className="text-white font-semibold text-[10px] md:text-[25px]">Mercado Pago</h2>
                     </div>
-                    <div className="w-[200px] h-[170px] bg-gray-500 hover:bg-blue-600 flex-col rounded-xl shadow-lg transform transition duration-300 ease-in-out hover:scale-105 flex items-center justify-center">
-                        <img src={auth0Logo} alt="" className="w-[100px] h-[100px]" />
-                        <h2 className="text-white font-semibold text-[25px]">Auth0</h2>
+                    <div className="w-[100px] md:w-[200px] h-[100px] md:h-[170px] bg-gray-500 hover:bg-blue-600 flex-col rounded-xl shadow-lg transform transition duration-300 ease-in-out hover:scale-105 flex items-center justify-center">
+                        <img src={auth0Logo} alt="" className="w-[70px] md:w-[100px] h-[70px] md:h-[100px]" />
+                        <h2 className="text-white font-semibold text-[10px] md:text-[25px]">Auth0</h2>
                     </div>
-                    <div className="w-[200px] h-[170px] bg-gray-500 hover:bg-blue-600 flex-col rounded-xl shadow-lg transform transition duration-300 ease-in-out hover:scale-105 flex items-center justify-center">
-                        <img src={reactLogo} alt="" className="w-[100px] h-[100px]" />
-                        <h2 className="text-white font-semibold text-[25px]">Auth0</h2>
+                    <div className="w-[100px] md:w-[200px] h-[100px] md:h-[170px] bg-gray-500 hover:bg-blue-600 flex-col rounded-xl shadow-lg transform transition duration-300 ease-in-out hover:scale-105 flex items-center justify-center">
+                        <img src={reactLogo} alt="" className="w-[70px] md:w-[100px] h-[70px] md:h-[100px]" />
+                        <h2 className="text-white font-semibold text-[10px] md:text-[25px]">Auth0</h2>
                     </div>
                 </div>
             </div>
 
-            <div className="w-full flex flex-col justify-center items-center min-h-[400px]">
+            <div className="w-full flex flex-col justify-center items-center min-h-[400px]" id="aboutme">
                 {/* <h2 className="text-white text-[50px] font-bold">About me</h2> */}
-                <div className="w-full flex items-center my-8">
-                    <div className="flex-grow border-2 border-white rounded-l-full"></div>
-                    <span className="px-4 text-white text-[50px] font-bold">About me</span>
-                    <div className="flex-grow border-2 border-white rounded-r-full"></div>
+                <div className="w-4/5 md:w-full flex items-center my-8">
+                    <div className="flex-grow border-[1px] md:border-2 border-white rounded-l-full"></div>
+                    <span className="px-4 text-white text-[35px] md:text-[50px] font-bold">About me</span>
+                    <div className="flex-grow border-[1px] md:border-2 border-white rounded-r-full"></div>
                 </div>
-                <div className="w-full bg-gray-900 flex mt-8">
+                <div className="w-3/4 md:w-full bg-gray-900 flex md:flex-row flex-col mt-8">
                     {/* Menú izquierdo */}
-                    <div className="w-1/4 flex flex-col gap-7">
+                    <div className="w-full md:w-1/4 flex flex-row md:flex-col gap-7">
                         {Object.keys(content).map((option) => (
                             <button
                                 key={option}
-                                className={`py-4 px-4 text-center text-white font-bold border-2 border-gray-200 rounded-md hover:bg-gray-700 ${selectedOption === option ? "" : ""
+                                className={`py-4 px-4 text-center text-white text-[10px] md:text-[20px] font-bold border-2 border-gray-200 rounded-md hover:bg-gray-700 ${selectedOption === option ? "" : ""
                                     }`}
                                 onClick={() => setSelectedOption(option as OptionType)} // Asegura el tipo aquí
                             >
@@ -256,9 +256,9 @@ const SparvoliValentino = () => {
                         ))}
                     </div>
                     {/* Contenido dinámico */}
-                    <div className="w-3/4 flex flex-col p-6 text-white">
-                        <h2 className="text-2xl font-bold mb-4">{selectedOption}</h2>
-                        <p className="text-lg text-justify">{content[selectedOption]}</p>
+                    <div className="w-full md:w-3/4 flex flex-col p-6 text-white">
+                        <h2 className="text-center text-xl md:text-2xl font-bold mb-4">{selectedOption}</h2>
+                        <p className="md:text-lg text-justify">{content[selectedOption]}</p>
                     </div>
                 </div>
             </div>
