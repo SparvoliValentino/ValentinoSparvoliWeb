@@ -8,6 +8,7 @@ module.exports = {
     extend: {
       fontFamily: {
         personalizada: ['"Nombre de la Fuente"', 'sans-serif'],
+        poppins:['Poppins', 'sans-serif']
       },
     },
   },
