@@ -94,7 +94,7 @@ const SparvoliValentino = () => {
                         <div className="flex-grow border-[1px] md:border-2 border-white rounded-r-full"></div>
                     </div>
                     <div className="flex flex-wrap gap-10 justify-center items-center">
-                        <div className="w-[400px] max-h-[390px] min-h-[390px] group bg-white/5 border border-white/10 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:scale-[1.02] hover:border-blue-500">
+                        <div className="w-[300px] md:w-[400px] md:max-h-[390px] md:min-h-[390px] group bg-white/5 border border-white/10 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:scale-[1.02] hover:border-blue-500">
                             <div className="overflow-hidden">
                                 <a href="https://pf-ecommerce2024.vercel.app/">
                                     <img
@@ -125,7 +125,7 @@ const SparvoliValentino = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="w-[400px] max-h-[390px] min-h-[390px] group bg-white/5 border border-white/10 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:scale-[1.02] hover:border-blue-500">
+                        <div className="w-[300px] md:w-[400px] max-h-[390px] min-h-[390px] group bg-white/5 border border-white/10 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:scale-[1.02] hover:border-blue-500">
                             <div className="overflow-hidden">
                                 <a href="https://pf-ecommerce2024.vercel.app/">
                                     <img
@@ -154,7 +154,7 @@ const SparvoliValentino = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="w-[400px] max-h-[390px] min-h-[390px] group bg-white/5 border border-white/10 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:scale-[1.02] hover:border-blue-500">
+                        <div className="w-[300px] md:w-[400px]  max-h-[390px] min-h-[390px] group bg-white/5 border border-white/10 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:scale-[1.02] hover:border-blue-500">
                             <div className="overflow-hidden">
                                 <a href="https://ecommerce-apple-heaven-26yb.vercel.app/">
                                     <img
@@ -183,7 +183,7 @@ const SparvoliValentino = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="w-[400px] max-h-[390px] min-h-[390px] group bg-white/5 border border-white/10 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:scale-[1.02] hover:border-blue-500">
+                        <div className="w-[300px] md:w-[400px]  max-h-[390px] min-h-[390px] group bg-white/5 border border-white/10 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:scale-[1.02] hover:border-blue-500">
                             <div className="overflow-hidden">
                                 <a href="https://ecommerce-apple-heaven-26yb.vercel.app/">
                                     <img
