@@ -6,6 +6,7 @@ import InDev from "../assets/InDev.png"
 
 import CybergamesApp from "../assets/cybergamesApp.png"
 import AppleHeavenApp from "../assets/AppleHeaven.png"
+import Ecowash596 from "../assets/Ecowash596.png"
 import { faFile } from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import MondBanner from "../assets/MondBanner.png"
@@ -151,6 +152,35 @@ const SparvoliValentino = () => {
                                 <div className="flex gap-4 text-sm text-blue-400">
                                     <a href="https://github.com/SparvoliValentino/ImportedSN" target="_blank" className="hover:underline">GitHub</a>
                                     <a href="https://mondsn.vercel.app/" target="_blank" className="hover:underline">Demo</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="w-[300px] md:w-[400px]  max-h-[390px] min-h-[390px] group bg-white/5 border border-white/10 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:scale-[1.02] hover:border-blue-500">
+                            <div className="overflow-hidden">
+                                <a href="https://ecowash596.vercel.app/">
+                                    <img
+                                        src={Ecowash596}
+                                        alt="Cybergames"
+                                        className="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-500 ease-out"
+                                    />
+                                </a>
+                            </div>
+
+                            <div className="p-4">
+                                <h3 className="text-white text-xl font-semibold mb-1 group-hover:text-blue-400 transition-colors duration-300">Ecowash 596</h3>
+                                <p className="text-gray-400 text-sm mb-2">Online Car Wash Booking Platform.</p>
+
+                                <ul className="flex flex-wrap gap-2 text-xs text-gray-300 mb-3">
+                                    <li className="bg-gray-700 px-2 py-0.5 rounded">React</li>
+                                    <li className="bg-gray-700 px-2 py-0.5 rounded">Tailwind</li>
+                                    <li className="bg-gray-700 px-2 py-0.5 rounded">Typescript</li>
+                                    <li className="bg-gray-700 px-2 py-0.5 rounded">Next.JS</li>
+                                    <li className="bg-gray-700 px-2 py-0.5 rounded">Google App Script</li>
+                                </ul>
+
+                                <div className="flex gap-4 text-sm text-blue-400">
+                                    <a href="https://github.com/SparvoliValentino/ecowash596" target="_blank" className="hover:underline">GitHub</a>
+                                    <a href="https://ecowash596.vercel.app/" target="_blank" className="hover:underline">Demo</a>
                                 </div>
                             </div>
                         </div>
