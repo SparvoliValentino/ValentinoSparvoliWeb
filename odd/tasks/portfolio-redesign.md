@@ -30,7 +30,7 @@ Mode: off (source: no test runner configured in project). Checks: `npm run build
 ## Tasks
 - [x] T1 Foundation: remove dead code/assets/deps (sweetalert2, simple-parallax-js, App.css, stubs, placeholder font), Tailwind tokens + fonts, i18n provider, typed content data (ES/EN), index.html meta + JSON-LD, drop unneeded router. Route: delegated writer.
 - [x] T2 Navbar + Hero + metrics strip. Route: delegated writer.
-- [ ] T3 Projects sticky stack (3 projects, images). Route: delegated writer.
+- [x] T3 Projects sticky stack (3 projects, images). Route: delegated writer.
 - [ ] T4 Experience, Stack, Education, Contact, Footer. Route: delegated writer.
 
 Route evidence: 2+ non-trivial files per task → writer trigger.
@@ -53,6 +53,11 @@ Route evidence: 2+ non-trivial files per task → writer trigger.
   - `npm run build`: pass (tsc -b && vite build, no errors).
   - `npm run lint`: pass, 0 errors, 1 warning (same pre-existing `react-refresh/only-export-components` note as T1).
   - Not verified in an actual browser (no visual/interactive QA tool used in this session) — verified via successful TypeScript build + ESLint only.
+- T2 commit: `bd027c4` — "feat: add navbar, hero and metrics sections".
+- T3 (commit pending — see next commit hash): added a custom Tailwind `stack: 841px` breakpoint (matches A's sticky-stack collapse threshold), `useStickyStack` wired into `Projects` (`ProjectCard`, `ProjectImagePlaceholder`). 3 cards, in order: TodoEscabio, Refractory SRL, MOND — text/links from B, MOND image from `src/assets/MondBanner.png`. Below 841px cards are `position: static` and stack in a single column (image above content); at/above 841px they are `position: sticky` and `useStickyStack` scales/dims each card as the next one scrolls over it (same math as reference A, driven by a passive scroll+resize listener instead of a continuous rAF loop). TodoEscabio and Refractory render the `ProjectImagePlaceholder` browser-window mock (no screenshot yet).
+  - `npm run build`: pass (tsc -b && vite build, no errors).
+  - `npm run lint`: pass, 0 errors, 1 warning (same pre-existing note).
+  - Not verified in an actual browser — same caveat as T2.
 
 ## Next step
-T3 (Projects sticky stack).
+T4 (Experience, Stack, Education, Contact, Footer).

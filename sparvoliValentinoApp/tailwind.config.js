@@ -23,6 +23,11 @@ module.exports = {
         sans: ['Inter', 'system-ui', 'sans-serif'],
         mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
       },
+      screens: {
+        // Matches the sticky project-stack collapse breakpoint (single
+        // column + no sticky below this width).
+        stack: '841px',
+      },
     },
   },
   plugins: [],
