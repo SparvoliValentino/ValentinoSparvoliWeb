@@ -31,7 +31,7 @@ Mode: off (source: no test runner configured in project). Checks: `npm run build
 - [x] T1 Foundation: remove dead code/assets/deps (sweetalert2, simple-parallax-js, App.css, stubs, placeholder font), Tailwind tokens + fonts, i18n provider, typed content data (ES/EN), index.html meta + JSON-LD, drop unneeded router. Route: delegated writer.
 - [x] T2 Navbar + Hero + metrics strip. Route: delegated writer.
 - [x] T3 Projects sticky stack (3 projects, images). Route: delegated writer.
-- [ ] T4 Experience, Stack, Education, Contact, Footer. Route: delegated writer.
+- [x] T4 Experience, Stack, Education, Contact, Footer. Route: delegated writer.
 
 Route evidence: 2+ non-trivial files per task → writer trigger.
 
@@ -58,6 +58,22 @@ Route evidence: 2+ non-trivial files per task → writer trigger.
   - `npm run build`: pass (tsc -b && vite build, no errors).
   - `npm run lint`: pass, 0 errors, 1 warning (same pre-existing note).
   - Not verified in an actual browser — same caveat as T2.
+- T3 commit: `cb78b40` — "feat: add sticky-stacking projects section".
+- T4 (commit pending — see next commit hash): implemented `Experience` (Finket + Freelance cards, left accent border, checkmark bullets via `RichText`, tech chips), `Stack` (3 columns from `content/stack.ts`, "daily use"/"agile" mono notes), `Education` (3 cards from `content/education.ts`, green-bold `RichText` variant, certificate links), `Contact` (headline with highlighted span, primary/ghost/ghost CTAs — email, LinkedIn, CV — plus an email/phone/linkedin/github detail grid) and `Footer` (status dot, location, live Buenos Aires clock updated every 30s, back-to-top link). Added a `strongClassName` prop to `RichText` so Education's bold text can render green (matching B) while other sections keep the default ink/bold.
+  - `npm run build`: pass (tsc -b && vite build, no errors).
+  - `npm run lint`: pass, 0 errors, 1 warning (same pre-existing note).
+  - Not verified in an actual browser — same caveat as T2/T3.
+  - Verified with `rg` that no leftover FontAwesome/react-router/sweetalert2/simple-parallax-js/"personalizada"/Jersey 10 references remain anywhere in `src/`, `index.html`, `package.json` or `tailwind.config.js`.
+
+## Deviations from the approved design
+- Hero headline: B's h1 is a single line ("Valentino Sparvoli."); to satisfy A's "masked line-by-line reveal headline with one gradient/accent span" it was split into two masked lines — line 1 "Valentino Sparvoli" (plain), line 2 "Frontend Developer" (green→cyan→purple gradient span) — with the role-scramble line (Next.js & TypeScript / UI components at Finket / etc., cycling) placed just below, reusing A's scramble mechanic on B-sourced role strings.
+- `contact.ts` was not created as a separate content file; contact facts (email, phone, GitHub, LinkedIn, CV) live in `content/profile.ts` since they're the same facts already needed by the hero id-card, avoiding duplication.
+- `useStickyStack` uses a passive `scroll`/`resize` listener batched with `requestAnimationFrame` instead of reference A's continuous rAF loop — same scale/dim math, less idle CPU use.
+- No dedicated cross-browser/visual QA was performed (no browser automation tool used in this session); all four tasks were verified via `npm run build` (tsc -b + vite build) and `npm run lint` only, per the acceptance criteria's stated checks.
+
+## Pending / follow-ups
+- TodoEscabio and Refractory SRL still render the `ProjectImagePlaceholder` browser-window mock (no screenshots available). To add a real screenshot later: drop the image file in `sparvoliValentinoApp/src/assets/`, import it in `src/content/projects.ts`, and set the `image` field on that project's entry (see the `mond` entry for the pattern) — no other code changes needed.
+- The pre-existing `react-refresh/only-export-components` ESLint warning on `src/i18n/I18nContext.tsx` (exporting both `I18nProvider` and `useI18n`) was left as-is; it does not fail `npm run lint` and is a common, accepted pattern for context+hook modules.
 
 ## Next step
-T4 (Experience, Stack, Education, Contact, Footer).
+None — T1–T4 complete. Optional future work: real screenshots for TodoEscabio/Refractory SRL, and a manual/browser-based visual QA pass.
