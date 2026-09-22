@@ -18,19 +18,15 @@ export const experience: ExperienceItem[] = [
     role: { es: 'Desarrollador Frontend · Buenos Aires', en: 'Frontend Developer · Buenos Aires' },
     bullets: [
       {
-        es: 'Desarrollo **tres productos financieros en simultáneo**: una billetera digital, una plataforma de pagos y un sistema de gestión interna.',
-        en: 'I develop **three financial products simultaneously**: a digital wallet, a payments platform and an internal management system.',
+        es: 'Construyo interfaces con **Next.js y TypeScript** en un producto fintech, dentro de un equipo ágil con revisión de código y sprints.',
+        en: 'I build interfaces with **Next.js and TypeScript** for a fintech product, in an agile team with code review and sprints.',
       },
       {
-        es: 'Estoy a cargo de la **librería de componentes visuales** que usa todo el equipo — la base que hace que los productos se vean y funcionen consistentes.',
-        en: 'I own the **visual component library** used by the whole team — the foundation that keeps every product consistent.',
-      },
-      {
-        es: 'Trabajo en un **equipo ágil** con revisión de código diaria, planificación por sprints y entregas continuas.',
-        en: 'I work in an **agile team** with daily code review, sprint planning and continuous delivery.',
+        es: 'Aplico buenas prácticas de **accesibilidad, performance y componentes reutilizables**.',
+        en: 'I apply good practices around **accessibility, performance and reusable components**.',
       },
     ],
-    tags: ['Next.js', 'TypeScript', 'Storybook', 'Fintech'],
+    tags: ['Next.js', 'TypeScript', 'Fintech'],
   },
   {
     company: 'Freelance',
@@ -39,8 +35,8 @@ export const experience: ExperienceItem[] = [
     role: { es: 'Desarrollador Full-Stack · Remoto', en: 'Full-Stack Developer · Remote' },
     bullets: [
       {
-        es: 'Sitios web y tiendas online **de principio a fin**: entiendo la necesidad del cliente, diseño, desarrollo y publico.',
-        en: 'Websites and online stores **end to end**: I understand the client\'s need, design, build and ship.',
+        es: 'Sitios y tiendas online **de principio a fin**: diseño, desarrollo y publicación.',
+        en: 'Websites and online stores **end to end**: design, build and ship.',
       },
       {
         es: 'Clientes reales que confían su negocio a mi trabajo: una empresa industrial y comercios locales.',

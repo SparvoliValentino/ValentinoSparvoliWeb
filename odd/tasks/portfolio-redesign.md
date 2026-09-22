@@ -75,5 +75,23 @@ Route evidence: 2+ non-trivial files per task → writer trigger.
 - TodoEscabio and Refractory SRL still render the `ProjectImagePlaceholder` browser-window mock (no screenshots available). To add a real screenshot later: drop the image file in `sparvoliValentinoApp/src/assets/`, import it in `src/content/projects.ts`, and set the `image` field on that project's entry (see the `mond` entry for the pattern) — no other code changes needed.
 - The pre-existing `react-refresh/only-export-components` ESLint warning on `src/i18n/I18nContext.tsx` (exporting both `I18nProvider` and `useI18n`) was left as-is; it does not fail `npm run lint` and is a common, accepted pattern for context+hook modules.
 
+## Round 2 (user review, 2026-09-22)
+User feedback: sticky stack invisible (on mobile), cards too text-heavy, mobile hero cut/overloaded (must be mobile-first), Finket internal claims not allowed, section titles too small, projects must be the most polished section.
+Root cause T3: reference A disables stacking below 841px and cards lack min-height / `transform-origin: top`.
+
+Approved content change: metrics = "1+ año Frontend en fintech", "3 proyectos freelance publicados para clientes reales", "B2 Cambridge", "Egresado Henry con honores". Finket card generic (stack, agile team, good practices), no products named, no component library, no internal system.
+
+- [x] T5 Content trim + Finket sanitization: metrics, Finket bullets, hero id-card/role-scramble strings without internal claims; max 2 bullets per experience; shorter copy everywhere (ES + EN). Route: delegated writer.
+- [ ] T6 Mobile-first hero: no portrait/id-card below md; name, role, one-line bio, CTAs, socials fit the first mobile viewport. Route: delegated writer.
+- [ ] T7 Section headers: large, obvious titles; remove subtitles; index as small detail. Compact stack/education/contact. Route: delegated writer.
+- [ ] T8 Projects redesign: sticky stacking on mobile AND desktop (min-height, transform-origin top, top offset under navbar), image-led card, big title, one-line description, chips, clear CTA. Route: delegated writer.
+
+- T5 (commit pending — see next commit hash): sanitized every Finket-internal claim. `content/experience.ts` Finket bullets cut from 3 to 2, generic ("Next.js/TypeScript on a fintech product, agile team, code review, sprints" + "accessibility, performance, reusable components"), no products/wallet/payments-platform/internal-system/component-library ownership named; dropped the `Storybook` tag. Freelance's first bullet shortened. `i18n/dictionaries/{es,en}.ts`: `metrics` replaced with the approved set (`1+ año` / "como Frontend en fintech", `3` / "proyectos freelance publicados para clientes reales", `B2` / "inglés certificado Cambridge", `Henry` / "egresado con honores" — mirrored in EN); `hero.roles` and `hero.sub` rewritten to drop "tres productos"/wallet/payments-platform implications (bio now: "Construyo interfaces rápidas y claras con Next.js y TypeScript. Actualmente en una fintech."); `hero.card.experienceValue` changed from "Productos reales en producción" to "1+ año en fintech"; `contact.sub` shortened in both locales.
+  - `npm run build`: pass (tsc -b && vite build, no errors).
+  - `npm run lint`: pass, 0 errors, 1 warning (same pre-existing `react-refresh/only-export-components` note).
+  - `rg -in 'billetera|wallet|payments platform|plataforma de pagos|gestión interna|management system|component library|librería de componentes|tres productos|three products' src` → no matches.
+  - Previous commit: `b4da2e2`.
+- T5 commit: pending (recorded after commit below).
+
 ## Next step
-None — T1–T4 complete. Optional future work: real screenshots for TodoEscabio/Refractory SRL, and a manual/browser-based visual QA pass.
+T6.
