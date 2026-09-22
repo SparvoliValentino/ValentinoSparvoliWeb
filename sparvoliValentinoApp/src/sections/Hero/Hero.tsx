@@ -24,10 +24,13 @@ export function Hero() {
   const { card } = t.hero;
 
   return (
-    <section id="hero" className="relative overflow-clip py-14 md:py-24">
+    <section
+      id="hero"
+      className="relative flex min-h-[calc(100dvh-60px)] items-center overflow-clip py-10 md:min-h-0 md:py-24"
+    >
       <div className="pointer-events-none absolute -top-1/5 -right-1/4 h-[70vw] max-h-[700px] w-[70vw] max-w-[700px] rounded-full bg-[radial-gradient(circle,rgba(63,185,80,0.09),transparent_65%)]" />
 
-      <div className="relative mx-auto grid w-[min(100%-40px,1040px)] grid-cols-1 items-center gap-10 md:w-[min(100%-64px,1040px)] md:grid-cols-[1.25fr_1fr] md:gap-14">
+      <div className="relative mx-auto grid w-[min(100%-40px,1040px)] min-w-0 grid-cols-1 items-center gap-10 md:w-[min(100%-64px,1040px)] md:grid-cols-[1.25fr_1fr] md:gap-14">
         <div ref={headingRef}>
           <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-green/35 bg-green/10 px-3.5 py-1.5 font-mono text-xs text-green">
             <span className="h-2 w-2 animate-pulse-dot rounded-full bg-accent" />
@@ -93,7 +96,7 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="mx-auto w-full max-w-[400px]" ref={wrapRef} style={{ perspective: '900px' }}>
+        <div className="mx-auto hidden w-full max-w-[400px] md:block" ref={wrapRef} style={{ perspective: '900px' }}>
           <div
             ref={shellRef}
             className="relative rounded-[30px] border border-line bg-gradient-to-b from-white/5 to-transparent p-2.5 shadow-[0_40px_100px_rgba(0,0,0,0.45)] transition-transform duration-300"

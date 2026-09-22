@@ -82,7 +82,7 @@ Root cause T3: reference A disables stacking below 841px and cards lack min-heig
 Approved content change: metrics = "1+ año Frontend en fintech", "3 proyectos freelance publicados para clientes reales", "B2 Cambridge", "Egresado Henry con honores". Finket card generic (stack, agile team, good practices), no products named, no component library, no internal system.
 
 - [x] T5 Content trim + Finket sanitization: metrics, Finket bullets, hero id-card/role-scramble strings without internal claims; max 2 bullets per experience; shorter copy everywhere (ES + EN). Route: delegated writer.
-- [ ] T6 Mobile-first hero: no portrait/id-card below md; name, role, one-line bio, CTAs, socials fit the first mobile viewport. Route: delegated writer.
+- [x] T6 Mobile-first hero: no portrait/id-card below md; name, role, one-line bio, CTAs, socials fit the first mobile viewport. Route: delegated writer.
 - [ ] T7 Section headers: large, obvious titles; remove subtitles; index as small detail. Compact stack/education/contact. Route: delegated writer.
 - [ ] T8 Projects redesign: sticky stacking on mobile AND desktop (min-height, transform-origin top, top offset under navbar), image-led card, big title, one-line description, chips, clear CTA. Route: delegated writer.
 
@@ -91,7 +91,13 @@ Approved content change: metrics = "1+ año Frontend en fintech", "3 proyectos f
   - `npm run lint`: pass, 0 errors, 1 warning (same pre-existing `react-refresh/only-export-components` note).
   - `rg -in 'billetera|wallet|payments platform|plataforma de pagos|gestión interna|management system|component library|librería de componentes|tres productos|three products' src` → no matches.
   - Previous commit: `b4da2e2`.
-- T5 commit: pending (recorded after commit below).
+- T5 commit: `431dbbc` — "refactor: trim copy and remove internal Finket claims".
+
+- T6 (commit pending — see next commit hash): `Hero.tsx` — wrapped the portrait+id-card column (`wrapRef` div) in `hidden md:block` so it renders only at `md` and above; section changed to `flex min-h-[calc(100dvh-60px)] items-center overflow-clip py-10 md:min-h-0 md:py-24` so on mobile the text column (pill, headline, role, one-line bio, CTAs, socials) is vertically centered in the viewport height minus the 60px sticky navbar, instead of top-aligned with a fixed `py-14`; added `min-w-0` to the inner grid wrapper as a defensive flex-item sizing guard. Also fixed a Finket-internal-claims leak found in `index.html`'s `<meta name="description">` and `og:description` ("Construyendo/Construyo productos fintech en producción en Finket" → "Actualmente en una fintech"), missed in T5.
+  - `npm run build`: pass. `npm run lint`: pass, 0 errors, 1 warning (pre-existing).
+  - Visual verification: this sandbox's headless Chrome enforces a ~500px minimum window width and its `--screenshot` output crops to the originally-requested smaller size instead of showing the true (wider) render — confirmed via a temporary in-page diagnostic (`document.documentElement.scrollWidth === window.innerWidth`, no real overflow) then worked around by screenshotting a throwaway local HTML file (kept only in scratch, not committed) that iframes `http://localhost:4173/...` at a literal `width="390" height="844"`, with the outer Chrome window sized well above the 500px floor. At true 390×844: navbar, availability pill, two-line headline (wraps cleanly to "Valentino"/"Sparvoli"/"Frontend Developer"), role line, one-line bio, both CTAs and the GitHub/LinkedIn row all render fully on-screen, vertically centered, nothing cut off. At 1440×900 the two-column layout with portrait + id-card is unchanged and still correct.
+  - Previous commit: `431dbbc`.
+- T6 commit: pending (recorded after commit below).
 
 ## Next step
-T6.
+T7.
