@@ -1,4 +1,4 @@
-import type { Ref } from 'react';
+import type { CSSProperties, ReactNode, Ref } from 'react';
 import type { Project } from '../../content/projects';
 import type { Locale } from '../../i18n';
 import { RichText } from '../../components/ui/RichText';
@@ -11,49 +11,84 @@ interface ProjectCardProps {
   index: number;
   total: number;
   liveLabel: string;
-  codeLabel: string;
   placeholderLabel: string;
   cardRef: Ref<HTMLDivElement>;
-  stackTopPx: number;
+  topPx: number;
 }
 
+/**
+ * Image-led project card: the screenshot (or placeholder mock) dominates,
+ * title/description are compact underneath. The media itself links to the
+ * live site (new tab) when one exists. `position: sticky` and
+ * `transform-origin: 50% 0%` apply at every breakpoint so the stacking
+ * effect (driven by `useStickyStack`) reads on mobile as well as desktop —
+ * only the two-column vs. stacked layout changes at the `stack` breakpoint.
+ */
 export function ProjectCard({
   project,
   locale,
   index,
   total,
   liveLabel,
-  codeLabel,
   placeholderLabel,
   cardRef,
-  stackTopPx,
+  topPx,
 }: ProjectCardProps) {
+  const isContain = project.imageFit === 'contain';
+
   return (
     <div
       ref={cardRef}
-      style={{ top: `${stackTopPx}px` }}
-      className="stack:sticky grid grid-cols-1 overflow-hidden rounded-[20px] border border-line bg-gradient-to-b from-[#0d1220] to-[#0a0e18] shadow-[0_-20px_60px_rgba(0,0,0,0.4)] stack:grid-cols-[1.15fr_0.85fr]"
+      style={{ top: `${topPx}px`, transformOrigin: '50% 0%' }}
+      className="sticky grid min-h-[420px] grid-cols-1 overflow-hidden rounded-[20px] border border-line bg-gradient-to-b from-[#0d1220] to-[#0a0e18] shadow-[0_-20px_60px_rgba(0,0,0,0.4)] stack:min-h-[500px] stack:grid-cols-[1.15fr_0.85fr]"
     >
-      <div className="relative order-2 aspect-video overflow-hidden border-t border-line stack:order-1 stack:aspect-auto stack:border-t-0 stack:border-r">
+      {/* Index badge lives at the card level (not over the media), so it never
+          overlaps the placeholder's browser-chrome bar or a real screenshot's
+          own top content. */}
+      <span className="absolute top-4 right-4 z-10 rounded-full border border-white/15 bg-bg/70 px-3 py-1.5 font-mono text-[11px] tracking-[0.15em] text-white/85 backdrop-blur-md stack:top-5 stack:right-5">
+        {String(index + 1).padStart(2, '0')} / {String(total).padStart(2, '0')}
+      </span>
+
+      <MediaWrapper
+        href={project.live}
+        ariaLabel={`${liveLabel}: ${project.title}`}
+        className={`group relative block aspect-[4/3] overflow-hidden border-b border-line stack:aspect-auto stack:border-r stack:border-b-0 ${
+          isContain ? 'flex items-center justify-center p-6 stack:p-10' : ''
+        }`}
+        style={isContain ? { backgroundColor: project.imageBg } : undefined}
+      >
         {project.image ? (
-          <img src={project.image} alt={project.title} className="absolute inset-0 h-full w-full object-cover" />
+          <img
+            src={project.image}
+            alt={project.title}
+            className={
+              isContain
+                ? 'h-full w-full object-contain transition-transform duration-700 group-hover:scale-[1.03]'
+                : 'absolute inset-0 h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]'
+            }
+          />
         ) : (
           <ProjectImagePlaceholder title={project.title} domain={project.domain} label={placeholderLabel} />
         )}
-        <span className="absolute top-4 left-4 rounded-full border border-white/15 bg-bg/60 px-3 py-1.5 font-mono text-[11px] tracking-[0.15em] text-white/85 backdrop-blur-md">
-          {String(index + 1).padStart(2, '0')} / {String(total).padStart(2, '0')}
-        </span>
-      </div>
+        {project.live && (
+          // Always visible on touch layouts; revealed on hover from the `stack` breakpoint up.
+          <span className="absolute right-4 bottom-4 rounded-full border border-accent/40 bg-bg/80 px-3 py-1.5 text-[12px] font-semibold text-green backdrop-blur-md transition-opacity duration-300 stack:opacity-0 stack:group-hover:opacity-100 stack:group-focus-visible:opacity-100">
+            {liveLabel} ↗
+          </span>
+        )}
+      </MediaWrapper>
 
-      <div className="order-1 flex flex-col justify-center gap-3 p-6 stack:order-2 stack:p-10">
+      <div className="flex flex-col justify-center gap-2.5 p-5 stack:gap-3.5 stack:p-10 lg:p-12">
         <div className="flex flex-wrap items-baseline gap-2">
-          <h3 className="text-[22px] font-bold text-ink">{project.title}</h3>
+          <h3 className="text-[26px] font-extrabold tracking-tight text-ink stack:text-[30px] lg:text-[34px]">
+            {project.title}
+          </h3>
           <span className="ml-auto font-mono text-xs text-dim">{project.year}</span>
         </div>
         <span className="inline-block self-start rounded-full border border-orange/28 bg-orange/[0.08] px-2.5 py-[3px] font-mono text-[11px] text-orange">
           {project.type[locale]}
         </span>
-        <p className="text-[14.5px] text-dim">
+        <p className="text-[14.5px] leading-relaxed text-dim lg:text-base">
           <RichText text={project.description[locale]} />
         </p>
         <ul className="flex flex-wrap gap-2">
@@ -63,29 +98,31 @@ export function ProjectCard({
             </li>
           ))}
         </ul>
-        <div className="mt-1 flex flex-wrap gap-2.5">
-          {project.live && (
-            <a
-              href={project.live}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-lg border border-accent/40 bg-accent/[0.12] px-4 py-2 text-[13px] font-semibold text-green transition hover:bg-accent/20"
-            >
-              {liveLabel} ↗
-            </a>
-          )}
-          {project.code && (
-            <a
-              href={project.code}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-lg border border-line px-4 py-2 text-[13px] font-semibold text-ink transition hover:border-accent hover:text-green"
-            >
-              {codeLabel} ↗
-            </a>
-          )}
-        </div>
       </div>
     </div>
+  );
+}
+
+interface MediaWrapperProps {
+  href?: string;
+  ariaLabel: string;
+  className: string;
+  style?: CSSProperties;
+  children: ReactNode;
+}
+
+/** Renders the card media as a new-tab link to the live site, or a plain box when there is none. */
+function MediaWrapper({ href, ariaLabel, className, style, children }: MediaWrapperProps) {
+  if (!href) {
+    return (
+      <div className={className} style={style}>
+        {children}
+      </div>
+    );
+  }
+  return (
+    <a href={href} target="_blank" rel="noopener noreferrer" aria-label={ariaLabel} className={className} style={style}>
+      {children}
+    </a>
   );
 }

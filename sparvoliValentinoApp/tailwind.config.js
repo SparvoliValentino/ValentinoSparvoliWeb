@@ -24,8 +24,9 @@ module.exports = {
         mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
       },
       screens: {
-        // Matches the sticky project-stack collapse breakpoint (single
-        // column + no sticky below this width).
+        // Project cards switch from a stacked (image above content) to a
+        // side-by-side layout at this width. Sticky stacking itself runs at
+        // every breakpoint — this only toggles the card's internal layout.
         stack: '841px',
       },
     },

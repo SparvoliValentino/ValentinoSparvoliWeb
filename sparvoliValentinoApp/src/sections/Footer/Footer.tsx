@@ -22,7 +22,7 @@ export function Footer() {
 
   return (
     <footer className="border-t border-line bg-panel-2">
-      <div className="mx-auto flex w-[min(100%-40px,1040px)] flex-wrap items-center gap-4 py-3.5 font-mono text-[11.5px] text-dim md:w-[min(100%-64px,1040px)]">
+      <div className="mx-auto flex w-[min(100%-40px,1040px)] flex-wrap items-center gap-4 py-3.5 font-mono text-[11.5px] text-dim md:w-[min(100%-64px,1100px)] lg:w-[min(100%-96px,1280px)]">
         <span className="flex items-center gap-1.5 whitespace-nowrap">
           <span className="text-green">●</span> {t.footer.status}
         </span>

@@ -39,6 +39,14 @@ export function PhoneIcon(props: SVGProps<SVGSVGElement>) {
   );
 }
 
+export function CloseIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth={1.8} {...props}>
+      <path d="M5 5l14 14M19 5 5 19" strokeLinecap="round" />
+    </svg>
+  );
+}
+
 export function MenuIcon({ open }: { open: boolean }) {
   return (
     <span className="flex flex-col gap-1 p-2">

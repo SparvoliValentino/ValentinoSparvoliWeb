@@ -8,6 +8,7 @@ export const es: Dictionary = {
     education: 'Formación',
     contact: 'Contacto',
     menuLabel: 'Menú',
+    closeMenuLabel: 'Cerrar menú',
     langLabel: 'Idioma',
   },
   hero: {
@@ -52,28 +53,23 @@ export const es: Dictionary = {
   experience: {
     kicker: 'trayectoria',
     title: 'Experiencia',
-    sub: 'Lo que hago hoy y lo que vengo construyendo.',
   },
   projects: {
     kicker: 'trabajo real',
-    title: 'Proyectos destacados',
-    sub: 'Todos están online — podés entrar y probarlos ahora mismo.',
+    title: 'Proyectos',
     liveLabel: 'Visitar sitio',
-    codeLabel: 'Ver código',
     moreLabel: 'Ver más proyectos en GitHub',
     placeholderLabel: 'Vista previa próximamente',
   },
   stack: {
     kicker: 'herramientas',
     title: 'Tecnologías',
-    sub: 'Con qué trabajo — y qué uso todos los días.',
     dailyUse: 'uso diario',
     agile: 'metodología ágil',
   },
   education: {
     kicker: 'preparación',
     title: 'Formación',
-    sub: 'Títulos y certificaciones — todos verificables online.',
     certLabel: 'Ver certificado',
   },
   contact: {

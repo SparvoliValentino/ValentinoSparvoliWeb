@@ -27,6 +27,7 @@ export interface Dictionary {
     education: string;
     contact: string;
     menuLabel: string;
+    closeMenuLabel: string;
     langLabel: string;
   };
   hero: {
@@ -47,28 +48,23 @@ export interface Dictionary {
   experience: {
     kicker: string;
     title: string;
-    sub: string;
   };
   projects: {
     kicker: string;
     title: string;
-    sub: string;
     liveLabel: string;
-    codeLabel: string;
     moreLabel: string;
     placeholderLabel: string;
   };
   stack: {
     kicker: string;
     title: string;
-    sub: string;
     dailyUse: string;
     agile: string;
   };
   education: {
     kicker: string;
     title: string;
-    sub: string;
     certLabel: string;
   };
   contact: {

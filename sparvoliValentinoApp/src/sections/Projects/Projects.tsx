@@ -7,10 +7,10 @@ import { ProjectCard } from './ProjectCard';
 
 export function Projects() {
   const { t, locale } = useI18n();
-  const { setCardRef, stackTopPx } = useStickyStack(projects.length);
+  const { setCardRef, getTopPx } = useStickyStack(projects.length);
 
   return (
-    <Section id="projects" index="02" kicker={t.projects.kicker} title={t.projects.title} sub={t.projects.sub}>
+    <Section id="projects" index="02" kicker={t.projects.kicker} title={t.projects.title}>
       <div className="grid gap-6">
         {projects.map((project, i) => (
           <ProjectCard
@@ -20,10 +20,9 @@ export function Projects() {
             index={i}
             total={projects.length}
             liveLabel={t.projects.liveLabel}
-            codeLabel={t.projects.codeLabel}
             placeholderLabel={t.projects.placeholderLabel}
             cardRef={setCardRef(i)}
-            stackTopPx={stackTopPx}
+            topPx={getTopPx(i)}
           />
         ))}
       </div>

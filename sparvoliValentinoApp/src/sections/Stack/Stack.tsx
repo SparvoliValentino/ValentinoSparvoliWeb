@@ -7,16 +7,19 @@ export function Stack() {
   const { t, locale } = useI18n();
 
   return (
-    <Section id="stack" index="03" kicker={t.stack.kicker} title={t.stack.title} sub={t.stack.sub}>
-      <div className="grid gap-4 md:grid-cols-3">
+    <Section id="stack" index="03" kicker={t.stack.kicker} title={t.stack.title}>
+      <div className="grid gap-3.5 md:grid-cols-3 lg:gap-6">
         {stack.map((column) => (
-          <Reveal key={column.title.es} className="rounded-[10px] border border-line bg-panel p-5">
-            <h3 className="mb-1 text-[13px] font-bold text-ink">
+          <Reveal
+            key={column.title.es}
+            className="rounded-[10px] border border-line bg-panel p-4 lg:rounded-2xl lg:p-7"
+          >
+            <h3 className="mb-1 text-[13px] font-bold text-ink lg:mb-2 lg:text-base">
               <span className="mr-2">{column.icon}</span>
               {column.title[locale]}
             </h3>
-            <div className="mb-3.5 text-xs text-dim">{column.note[locale]}</div>
-            <ul className="flex flex-col gap-2.5 text-[14.5px]">
+            <div className="mb-3 text-xs text-dim lg:mb-5 lg:text-[13px]">{column.note[locale]}</div>
+            <ul className="flex flex-col gap-2 text-[14.5px] lg:gap-3 lg:text-base">
               {column.items.map((item) => (
                 <li
                   key={item.name}
