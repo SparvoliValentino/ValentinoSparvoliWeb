@@ -1,6 +1,7 @@
-import mondBanner from '../assets/MondBanner.png';
 import todoEscabioBanner from '../assets/TodoEscabio.png';
-import refractorySrlBanner from '../assets/RefractorySRL.png';
+import refractorySrlVideo from '../assets/RefractorySRL.webm';
+import techServiciosVideo from '../assets/TechServicios.webm';
+import loviDecoVideo from '../assets/LoviDeco.webm';
 import type { Localized } from '../i18n';
 
 export interface Project {
@@ -16,9 +17,11 @@ export interface Project {
   /**
    * Screenshot for the project card. When left undefined, the card renders a
    * browser-window placeholder mock instead. Set this to a local image import
-   * (see MOND below) as soon as a screenshot is available.
+   * (see TodoEscabio above) as soon as a screenshot is available.
    */
   image?: string;
+  /** Autoplaying, muted, looping clip; takes precedence over `image`. */
+  video?: string;
   /**
    * How `image` fills its frame. `cover` (default) crops to fill — best for
    * wide desktop screenshots. `contain` letterboxes instead — use it for a
@@ -60,20 +63,34 @@ export const projects: Project[] = [
     },
     tech: ['Next.js', 'Tailwind', 'TypeScript'],
     live: 'https://refractorysrl.vercel.app/',
-    image: refractorySrlBanner,
+    video: refractorySrlVideo,
   },
   {
-    id: 'mond',
-    title: 'MOND',
-    year: '2024',
-    domain: 'mondsn.vercel.app',
-    type: { es: 'Proyecto propio · E-commerce', en: 'Own project · E-commerce' },
+    id: 'techservicios',
+    title: 'TechServicios',
+    year: '2026',
+    domain: 'techservicios.com.ar',
+    type: { es: 'Cliente real · Landing page', en: 'Real client · Landing page' },
     description: {
-      es: 'E-commerce de indumentaria enfocado en descubrimiento de productos y navegación.',
-      en: 'Clothing e-commerce focused on product discovery and navigation.',
+      es: 'Landing para una empresa de reparación de techos, impermeabilización y pintura.',
+      en: 'Landing page for a roof repair, waterproofing and painting company.',
     },
-    tech: ['React', 'Next.js', 'TypeScript', 'Google API'],
-    live: 'https://mondsn.vercel.app/',
-    image: mondBanner,
+    tech: ['React', 'Vite', 'TypeScript', 'Tailwind'],
+    live: 'https://techservicios.com.ar/',
+    video: techServiciosVideo,
+  },
+  {
+    id: 'lovi',
+    title: 'Loví Deco Bazar',
+    year: '2026',
+    domain: 'lovi.com.ar',
+    type: { es: 'Cliente real · Full stack', en: 'Real client · Full stack' },
+    description: {
+      es: 'Tienda de deco y bazar **full stack**: panel admin con autenticación, gestión y carga de productos, y tienda pública.',
+      en: '**Full-stack** decor and housewares store: authenticated admin panel, product management and uploads, and a public storefront.',
+    },
+    tech: ['React', 'TypeScript', 'Hono', 'Cloudflare Workers', 'D1', 'R2'],
+    live: 'https://lovi.com.ar/',
+    video: loviDecoVideo,
   },
 ];

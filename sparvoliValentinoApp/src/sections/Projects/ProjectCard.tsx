@@ -35,6 +35,9 @@ export function ProjectCard({
   topPx,
 }: ProjectCardProps) {
   const isContain = project.imageFit === 'contain';
+  const mediaClass = isContain
+    ? 'h-full w-full object-contain transition-transform duration-700 group-hover:scale-[1.03]'
+    : 'absolute inset-0 h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]';
 
   return (
     <div
@@ -57,16 +60,19 @@ export function ProjectCard({
         }`}
         style={isContain ? { backgroundColor: project.imageBg } : undefined}
       >
-        {project.image ? (
-          <img
-            src={project.image}
-            alt={project.title}
-            className={
-              isContain
-                ? 'h-full w-full object-contain transition-transform duration-700 group-hover:scale-[1.03]'
-                : 'absolute inset-0 h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]'
-            }
+        {project.video ? (
+          <video
+            src={project.video}
+            aria-label={project.title}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            className={mediaClass}
           />
+        ) : project.image ? (
+          <img src={project.image} alt={project.title} className={mediaClass} />
         ) : (
           <ProjectImagePlaceholder title={project.title} domain={project.domain} label={placeholderLabel} />
         )}
